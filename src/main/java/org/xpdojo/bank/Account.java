@@ -22,4 +22,13 @@ public class Account {
         balance -= amount;
         return true;
     }
+
+    public boolean transfer(Account acc2, int amount) {
+        boolean result = this.withdraw(amount);
+        if (!result) {
+            return false;
+        }
+        acc2.deposit(amount);
+        return true;
+    }
 }
