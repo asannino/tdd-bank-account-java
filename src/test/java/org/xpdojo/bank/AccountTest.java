@@ -14,8 +14,14 @@ public class AccountTest {
     @Test
     public void accountInitialize() {
         Account acc = new Account();
-        acc.initialize(0);
         assertThat(acc.getBalance(), is(0));
+    }
+
+    @Test
+    public void depositMoney() {
+        Account acc = new Account();
+        acc.deposit(100);
+        assertThat(acc.getBalance(), is(100));
     }
 
 
