@@ -24,7 +24,13 @@ public class AccountTest {
         assertThat(acc.getBalance(), is(100));
     }
 
-
+    @Test
+    public void withdrawMoney() {
+        Account acc = new Account();
+        acc.deposit(100);
+        acc.withdraw(30);
+        assertThat(acc.getBalance(), is(70));
+    }
 
 
 }
