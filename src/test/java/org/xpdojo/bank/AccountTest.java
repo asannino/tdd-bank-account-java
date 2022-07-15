@@ -47,7 +47,16 @@ public class AccountTest {
         assertThat(result, is(true));
         assertThat(acc1.getBalance(), is(70));
         assertThat(acc2.getBalance(), is(230));
-
     }
-
+    @Test
+    public void transferMoneyNoFunds() {
+        Account acc1 = new Account();
+        Account acc2 = new Account();
+        acc1.deposit(100);
+        acc2.deposit(200);
+        boolean result = acc1.transfer(acc2, 300);
+        assertThat(result, is(false));
+        assertThat(acc1.getBalance(), is(100));
+        assertThat(acc2.getBalance(), is(200));
+    }
 }
