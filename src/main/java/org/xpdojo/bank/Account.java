@@ -14,7 +14,12 @@ public class Account {
 
     }
 
-    public void withdraw(int amount) {
+    public boolean withdraw(int amount) {
+        if (amount > balance) {
+            return false;
+        }
+
         balance -= amount;
+        return true;
     }
 }

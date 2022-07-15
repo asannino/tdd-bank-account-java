@@ -23,9 +23,18 @@ public class AccountTest {
     public void withdrawMoney() {
         Account acc = new Account();
         acc.deposit(100);
-        acc.withdraw(30);
+        boolean result = acc.withdraw(30);
         assertThat(acc.getBalance(), is(70));
+        assertThat(result, is(true));
     }
 
+    @Test
+    public void withdrawMoreThanBalance() {
+        Account acc = new Account();
+        acc.deposit(100);
+        boolean result = acc.withdraw(300);
+        assertThat(acc.getBalance(), is(100));
+        assertThat(result, is(false));
+    }
 
 }
