@@ -12,4 +12,5 @@ public class AccountTest {
     public void depositAnAmountToIncreaseTheBalance() {
         assertThat("your first test").isBlank();
     }
+
 }
